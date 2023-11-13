@@ -420,11 +420,15 @@ export class Generator {
   protected getUtilImports(colSetName: string | null, generateRepo: boolean) {
     const imports: ImportTmplInput[] = []
     if (colSetName || generateRepo) {
-      imports.push({
-        importPath: "ts-sql-query/extras/utils",
-        imported: ["extractColumnsFrom"],
-        isDefault: false
-      })
+
+        /**
+         * AdminJS와의 호환성을 위해 .js 확장자를 붙여준다.
+         */
+        imports.push({
+          importPath: "ts-sql-query/extras/utils.js",
+          imported: ["extractColumnsFrom"],
+          isDefault: false
+        })
     }
     return imports;
   }

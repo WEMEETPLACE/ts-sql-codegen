@@ -5,7 +5,8 @@
  * This file has been auto-generated from database schema using ts-sql-codegen.
  * Any changes will be overwritten.
  */
-import { {{table.kind}} } from "ts-sql-query/{{table.kind}}";
+
+import { {{table.kind}} } from "ts-sql-query/{{table.kind}}.js"; // AdminJS와의 확장성을 위해 확장자 추가
 import type { DBConnection } from "{{dbConnectionSource}}";
 {{#if importExtraTypes}}
 import {
@@ -29,7 +30,7 @@ import {
     {{#if valuesTypes.selected}}
     SelectedValues,
     {{/if}}
-} from "ts-sql-query/extras/types";
+} from "ts-sql-query/extras/types.js"; // AdminJS와의 확장성을 위해 확장자 추가
 {{/if}}
 {{#each imports}}
     {{#if isDefault}}
